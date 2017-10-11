@@ -1,0 +1,32 @@
+
+    
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 100%;
+    color: black;
+    border: solid black 1px;
+    z-index: 1;
+    
+    
+    
+}
+.logo{
+    font-size: 30px;
+    margin-left: 50px;
+}
+.cartandmenu{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    
+    
+}
+
+
