@@ -30,8 +30,8 @@ class App extends Component {
         <Route component = { Brands } path = '/brands'/>
         <Route component = { Items } path = '/items'/>
         <Route component = { Product } path = '/product'/>
-        <Route component = { Follow } path = '/follow'/>
-        <Route component = { Shop } path = '/shop'/> */}
+        <Route component = { Follow } path = '/follow'/>*/}
+        <Route component = { Shop } path = '/Shop'/> 
         
       
       

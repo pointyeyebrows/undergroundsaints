@@ -1,40 +1,58 @@
-.boxcover {
-    display: flex;
-    /* margin-right: 100vw; */
-    border: solid black 1px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+.boxcoverHide {
+    
+    border: solid red 1px;
     width: 100vw;
     height: 100vh;
+    display: flex;
     position: absolute;
-    z-index: 2;
-    
+    margin-left: 100vw;
 }
+
+.boxcoverShow{
+    border: solid red 1px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    animation: slide .5s;
+}
+@keyframes slide{
+    from{
+        margin-left: 100vw;
+    }
+    to{
+        margin-left: 0vw;
+    }
+}
+
 .box1 {
-    background-color: grey;
-    opacity:.3;
-    width: 66%;
-    height: 1000px;
-    border: solid black 1px;
-    /* margin-right: -100vw; */
+    background-color: #747474;
+    opacity:.9;
+    width: 66vw;
+     
 }
 .box2 {
-    height: 1000px;
-    width: 34%;
-   display: flex;
-   flex-direction: column;
-   /* margin-right: -100vw; */
+    
+    display: flex;
+    flex-direction: column;
+    
+    border: solid black 1px;
+    width: 34vw;
+    margin-right: 0px;
+    background-color: white;
 }
 .site-nav_link {
-transition: color 0.2s, opacity 0.1s;
-font-family: "Canela","Times","Times New Roman",serif;
+font-family: 'Open Sans Condensed', sans-serif;
 font-weight: 300;
 letter-spacing: .0125rem;
 font-style: normal;
 text-transform: none;
-font-size: 0.85rem;
+font-size: 30px;
 letter-spacing: 0.075rem;
 text-transform: uppercase;
 }
 a {
-    color: #363636;
+    color: black;
     text-decoration: none;
     background: transparent;}
