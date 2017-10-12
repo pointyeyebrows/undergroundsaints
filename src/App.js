@@ -19,23 +19,27 @@ import SideBar from './components/SideBar/SideBar';
 class App extends Component {
   render() {
     return (
+      <div>
+        <Header/>
       <HashRouter>
+      
       <div>
        
-        <Route component = { Home } path = '/' exact />
-        <Route component = { Cart } path = '/cart'/>
+        <Route component = { Home } exact path = '/'  />
+        {/* <Route component = { Cart } path = '/cart'/>
         <Route component = { Brands } path = '/brands'/>
         <Route component = { Items } path = '/items'/>
         <Route component = { Product } path = '/product'/>
         <Route component = { Follow } path = '/follow'/>
-        <Route component = { Shop } path = '/shop'/>
-        <Route component = { Header } path = '/Header'/>
-        {/* <Route component = { SideBar } path = '/sidebar'/> */}
+        <Route component = { Shop } path = '/shop'/> */}
+        
+      
       
 
 
       </div>
       </HashRouter>
+      </div>
     );
   }
 }
