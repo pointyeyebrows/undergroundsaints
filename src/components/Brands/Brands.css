@@ -1,0 +1,19 @@
+.all {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.supremeBox{
+height: 300px;
+width: 100vw;
+background-repeat: repeat-y;
+}
+.supremePhoto{
+    height: 300px;
+    width: 300px;
+}
+.bapePhoto{
+    height: 300px;
+    width: 300px;;
+}

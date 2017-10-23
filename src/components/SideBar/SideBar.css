@@ -1,43 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
 .boxcoverHide {
     
-    border: solid red 1px;
+    
     width: 100vw;
     height: 100vh;
     display: flex;
     position: absolute;
     margin-left: 100vw;
+    transition: 1s ease-in-out;
+    
 }
 
 .boxcoverShow{
-    border: solid red 1px;
+   
     width: 100vw;
     height: 100vh;
     display: flex;
     position: absolute;
-    animation: slide .5s;
+    transition: 1s ease-in-out;
+    
+    
+    /* animation: slide .5s; */
 }
-@keyframes slide{
-    from{
-        margin-left: 100vw;
-    }
-    to{
-        margin-left: 0vw;
-    }
+.fadeHide{
+    
+}
+.fadeShow{
+    background-color: grey;
+    opacity:.9;
+    width: 100vw;
+    height: 100vh;
 }
 
+
 .box1 {
-    background-color: #747474;
-    opacity:.9;
+    
     width: 66vw;
      
 }
 .box2 {
     
-    display: flex;
-    flex-direction: column;
     
-    border: solid black 1px;
+    
+    box-shadow: -2px 0px 10px 0px #7A7A7A;
+    
     width: 34vw;
     margin-right: 0px;
     background-color: white;
@@ -56,3 +62,10 @@ a {
     color: black;
     text-decoration: none;
     background: transparent;}
+
+.writing {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 50px;
+}

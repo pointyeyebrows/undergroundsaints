@@ -6,6 +6,8 @@ const cors = require('cors')
 const passport = require('passport')
 const Auth0Strategy = require('passport-auth0')
 const ctrl = require('./config.js')
+const auth_ctr = require('./controllers/auth_controllers.js')
+const shop_ctr = require ('./controllers/shop_controllers.js')
 
 const app = express();
 
@@ -30,6 +32,19 @@ passport.use(new Auth0Strategy({
 console.log(profile)
 done(null, profile);
 }));
+//-------------------ENDPOINTS-------------------//
+// app.post('/api/shop/addOrder', shop_ctr.add_order );
+// app.post('/api/shop/addProduct', shop_ctr.add_product);
+// app.post('/api/shop/addUser', auth_ctr.add_user);
+// app.post('/api/shop/addProductsOrdered', shop.ctr.addProductsOrdered);
+
+
+
+
+
+
+
+
 
 app.get('/auth/me', (req, res) => {
 if (!req.user) {

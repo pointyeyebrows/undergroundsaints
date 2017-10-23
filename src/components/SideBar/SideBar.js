@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './SideBar.css';
+import { Link } from 'react-router-dom';
 
 export default class SideBar extends Component {
     constructor() {
@@ -14,13 +15,14 @@ export default class SideBar extends Component {
             <div className={this.props.classForSlider}>
                 <div className='box1'></div>
                 <div className='box2'>
-                    <a href="/home" className='site-nav_link'>Home</a>
-                    <a href="/shop" className='site-nav_link'>Shop</a>
-                    <a href="/brands" className='site-nav_link'>Brands</a>
-                    <a href="/follow" className='site-nav_link'>Follow</a>
-                    <a href='http://localhost:3005/auth'>
-                        <button>Log In</button>
-                    </a>
+                    <div className = 'writing'>
+                    <a href="/" className='site-nav_link'>Home</a>
+                    < Link to="/shop" className='site-nav_link'>Shop</Link>
+                    < Link to="/brands" className='site-nav_link'>Brands</Link>
+                    < Link to="/follow" className='site-nav_link'>Follow</Link>
+                    <a href='http://localhost:3005/auth' className='site-nav_link'>Log In</a>
+                    
+                </div>
                 </div>
             </div>
         )

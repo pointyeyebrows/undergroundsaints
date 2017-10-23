@@ -9,8 +9,8 @@ export default class Header extends Component {
         super()
 
         this.state = {
-            toggle: false,
-            classValue: ""
+            toggle: true,
+            classValue: "boxcoverHide fadeHide"
         }
     }
 
@@ -22,7 +22,8 @@ export default class Header extends Component {
 
     getClass() {
         const slider = this.state.toggle ? "boxcoverShow" : "boxcoverHide"
-        this.setState({classValue: slider})
+        const fader = this.state.toggle ? "fadeShow" : "fadeHide"
+        this.setState({classValue: slider , fader})
     }
 
     render() {
@@ -31,8 +32,9 @@ export default class Header extends Component {
             <div className = 'wholeHeader'>
             <SideBar classForSlider={this.state.classValue}/>
             <div className='Header'>
-                
+                <a href = "/">
                 <div className='logo'>UNDERGROUND SAINTS</div>
+                </a>
                 <div className='cartandmenu'>
                     <div className='cart'>cart</div>
                     <img onClick={() => {this.toggleBox(), this.getClass()}} className='menu' src={menuImg} alt='menu'/>
