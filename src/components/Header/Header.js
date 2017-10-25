@@ -3,6 +3,7 @@ import './Header.css';
 import SideBar from '../SideBar/SideBar.js'
 import '../SideBar/SideBar.css';
 import menuImg from './save-img.png'
+import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
     constructor() {
@@ -36,7 +37,9 @@ export default class Header extends Component {
                 <div className='logo'>UNDERGROUND SAINTS</div>
                 </a>
                 <div className='cartandmenu'>
+                    < Link to = '/cart'>
                     <div className='cart'>cart</div>
+                    </Link>
                     <img onClick={() => {this.toggleBox(), this.getClass()}} className='menu' src={menuImg} alt='menu'/>
                     
 

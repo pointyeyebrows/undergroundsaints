@@ -1,5 +1,7 @@
 require('dotenv').config();
+
 const express = require('express')
+const massive = require('massive')
 const bodyParser = require('body-parser')
 const session = require('express-session')
 const cors = require('cors')
@@ -10,7 +12,11 @@ const auth_ctr = require('./controllers/auth_controllers.js')
 const shop_ctr = require ('./controllers/shop_controllers.js')
 
 const app = express();
-
+massive
+('postgres://skrxkjoeqazhry:c417494d7f01b1b97fe4fa1ad810778ab8fd4aa28653bf47af4327c36b316daa@ec2-50-19-83-146.compute-1.amazonaws.com:5432/dfgtrqkr2t0jhn?ssl=true').then(db => {
+  
+app.set("db", db)
+})
 
 
 app.use(cors());
@@ -38,7 +44,7 @@ done(null, profile);
 // app.post('/api/shop/addUser', auth_ctr.add_user);
 // app.post('/api/shop/addProductsOrdered', shop.ctr.addProductsOrdered);
 
-
+app.get('/api/items', shop_ctr.getItems);
 
 
 

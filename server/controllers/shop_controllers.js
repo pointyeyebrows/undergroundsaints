@@ -1,4 +1,9 @@
-module.export = {
+module.exports = {
+    getItems: (req, res) => {
+        const db = req.app.get("db")
+        console.log(db)
+        db.get_items().then(response => res.status(200).send(response))
+    },
     add_order: (req, res, next) => {
         const { fulfilled, total, paid } = req.body;
         const db = req

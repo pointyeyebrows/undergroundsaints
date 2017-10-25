@@ -11,9 +11,42 @@ const initialState = {
     size: '',
     imgUrl: '',
     fulfilled: '',
-    total: '',
-    paid: ''
+    total: 0,
+    paid: '',
+    allItems: [],
+    cart: []
 
 }
 
+const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
+const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 
+
+export function getAllItems(items){
+    return {
+        type: GET_ALL_ITEMS,
+        payload: items
+    }
+}
+export function addProductToCart(val) {
+    return {
+      type: ADD_PRODUCT_TO_CART,
+      payload: val
+    }
+  }
+
+export default function reducer(state=initialState, action){
+    switch(action.type){
+        case GET_ALL_ITEMS: 
+            return Object.assign( {}, state, {allItems: action.payload} )
+       
+            case ADD_PRODUCT_TO_CART:
+            const newCart = state.cart.slice();
+            newCart.push(action.payload);
+            return Object.assign({}, state, {cart: newCart});
+         
+        default:
+            return state;
+        }
+      }
+    

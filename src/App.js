@@ -54,10 +54,10 @@ class App extends Component {
       <div>
        
         <Route component = { Home } exact path = '/'  />
-        <Route component = { Cart } path = 'cart'/>
+        <Route component = { Cart } path = '/cart'/>
         <Route component = { Brands } path = '/brands'/>
-        <Route component = { Items } path = '/items'/>
-        <Route component = { Product } path = '/product'/>
+        <Route component = { Items } path = '/items/:category'/>
+        <Route component = { Product } path = '/product/:id'/>
         <Route component = { Follow } path = '/follow'/>
         <Route component = { Shop } path = '/Shop'/> 
         

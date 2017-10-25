@@ -14,7 +14,7 @@ import brandsPhoto from './4.jpg';
 export default class Home extends Component {
     render(){
         return(
-    <div>
+    <div className = 'total'>
     <Header />
     <div className = 'background'>
         <img className = 'largeimg' src = { supremePhoto } alt='failed'/>
@@ -23,20 +23,20 @@ export default class Home extends Component {
             <Link to = "/brands">
             <div className = 'brandsBox'>
                 <img className = 'brandsPhoto' src = { brandsPhoto } alt='brand photo'/>
-                <div class="centered">BRANDS</div>
+                <div className="centered">BRANDS</div>
                 </div>
                 </Link>
                 <Link to= "/shop">
             <div className = 'shopBox'>
                 <img className = 'shopPhoto' src = { shopPhoto } alt='shop photo'/>
-                <div class="centered">SHOP</div>
+                <div className="centered">SHOP</div>
             </div>
             </Link>
             
             <Link to= "/follow">
             <div className = 'followBox'>
             <img className = 'followPhoto' src = { followPhoto }/>
-            <div class="centered">FOLLOW</div>
+            <div className="centered">FOLLOW</div>
             </div>
             </Link>
             </div>

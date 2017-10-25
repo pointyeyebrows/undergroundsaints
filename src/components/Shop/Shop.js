@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './Shop.css';
+import { getAllItems } from './../../ducks/reducer';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 import accesoriesPhoto from './9.jpg';
 import outerwearPhoto from './2.jpg';
@@ -8,36 +12,59 @@ import bottomsPhoto from './15.jpg';
 import shoesPhoto from './30.jpg';
 import hatsPhoto from './31.jpg';
 
-export default class Shop extends Component{
+class Shop extends Component{
+
+    componentDidMount(){
+        axios.get('/api/items').then(response => {
+            // console.log(response.data);
+            this.props.getAllItems(response.data)
+        })
+    }
+
+
+
+
     render(){
         return(
             <div>
                 <Header />
             <div className = 'shopPage'>
+                < Link to= "/items/tops">
                 <div className = 'topsBox'>
                 <img className = 'topsPhoto' src ={ topsPhoto }/>
-                <div class="centered">TOPS</div>
+                <div className="centered">TOPS</div>
                 </div>
+                </Link>
+                < Link to = "/items/bottoms">
                 <div className = 'bottomsBox'>
                 <img className = 'bottomsPhoto' src = { bottomsPhoto }/>
-                <div class="centered">BOTTOMS</div>
+                <div className="centered">BOTTOMS</div>
                 </div>
+                </Link>
+                < Link to = "/items/shoes">
                 <div className = 'shoesBox'>
                 <img className = 'shoesPhoto' src = {shoesPhoto}/>
-                <div class="centered">FOOTWEAR</div>
+                <div className="centered">FOOTWEAR</div>
                 </div>
+                </Link>
+                < Link to = "/items/outerwear">
                 <div className = 'outerwearBox'>
                 <img className = 'outerwearPhoto' src = { outerwearPhoto } alt = 'outerwear'/>
-                <div class="centered">OUTERWEAR</div>
+                <div className="centered">OUTERWEAR</div>
                 </div>
+                </Link>
+                < Link to = "/items/hats">
                 <div className = 'hatsBox'>
                 <img className = 'hatsPhoto' src = { hatsPhoto } />
-                <div class="centered">HATS</div>
+                <div className="centered">HATS</div>
                 </div>
+                </Link>
+                < Link to = "/items/accesories">
                 <div className = 'accesoriesBox'>
                 <img className = 'accesoriesPhoto' src = { accesoriesPhoto } alt = 'accesories' />
-                <div class="centered">ACCESORIES</div>
+                <div className="centered">ACCESORIES</div>
                 </div>
+                </Link>
             </div>
             </div>
         )
@@ -45,3 +72,4 @@ export default class Shop extends Component{
     }
     
 }
+export default connect(null, {getAllItems})(Shop)

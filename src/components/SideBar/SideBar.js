@@ -16,7 +16,7 @@ export default class SideBar extends Component {
                 <div className='box1'></div>
                 <div className='box2'>
                     <div className = 'writing'>
-                    <a href="/" className='site-nav_link'>Home</a>
+                    < Link to="/" className='site-nav_link'>Home</Link>
                     < Link to="/shop" className='site-nav_link'>Shop</Link>
                     < Link to="/brands" className='site-nav_link'>Brands</Link>
                     < Link to="/follow" className='site-nav_link'>Follow</Link>

@@ -19,7 +19,7 @@ export default class follow extends Component{
                 <a href = "https://twitter.com/undrgrndsaints">
                 <img className = 'twitter' src = { twitterPhoto } alt = 'twitter'/>
                 </a>
-                <a href = "https://www.grailed.com/">
+                <a href = "https://www.grailed.com/mygrails/1038111">
                 <img className = 'grailed'  src = {grailedPhoto} alt = 'grailed' />
                 </a>
             </div>
