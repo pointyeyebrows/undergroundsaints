@@ -4,5 +4,5 @@ first_name text,
 last_name text, 
 username text, 
 email text, 
-admin boolean
+admin text
 )

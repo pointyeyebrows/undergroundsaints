@@ -14,12 +14,14 @@ const initialState = {
     total: 0,
     paid: '',
     allItems: [],
-    cart: []
+    cart: [],
+    userId: 2
 
 }
 
 const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
+const SET_USER = "SET_USER";
 
 
 export function getAllItems(items){
@@ -34,6 +36,12 @@ export function addProductToCart(val) {
       payload: val
     }
   }
+  export function setUser(val) {
+      return {
+          type: SET_USER ,
+          payload: val
+      }
+  }
 
 export default function reducer(state=initialState, action){
     switch(action.type){
@@ -44,6 +52,9 @@ export default function reducer(state=initialState, action){
             const newCart = state.cart.slice();
             newCart.push(action.payload);
             return Object.assign({}, state, {cart: newCart});
+
+            case SET_USER:
+            return Object.assign( {}, state, {userId: action.payload} )
          
         default:
             return state;

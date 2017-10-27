@@ -9,10 +9,20 @@ import supremePhoto from './18.jpg';
 import shopPhoto from './19.jpg';
 import followPhoto from './16.jpg';
 import brandsPhoto from './4.jpg';
+import { setUser } from './../../ducks/reducer';
 
 
-export default class Home extends Component {
+ class Home extends Component {
+
+componentDidMount(){
+    axios.get('/auth/me').then(response => {
+        console.log('response', response)
+        this.props.setUser(response.data);
+    })
+}
+
     render(){
+        console.log(this.props.userId)
         return(
     <div className = 'total'>
     <Header />
@@ -47,3 +57,7 @@ export default class Home extends Component {
         )
     }
 }
+function mapDispatchToProps(state){
+return state;
+}
+export default connect(mapDispatchToProps, { setUser })(Home)

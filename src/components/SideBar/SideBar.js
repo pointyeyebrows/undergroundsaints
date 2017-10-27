@@ -21,6 +21,7 @@ export default class SideBar extends Component {
                     < Link to="/brands" className='site-nav_link'>Brands</Link>
                     < Link to="/follow" className='site-nav_link'>Follow</Link>
                     <a href='http://localhost:3005/auth' className='site-nav_link'>Log In</a>
+                    < Link to="/account" className='site-nav_link'>My Account</Link> 
                     
                 </div>
                 </div>

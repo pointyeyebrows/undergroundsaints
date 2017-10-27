@@ -11,7 +11,8 @@ import Product from './components/Product/Product';
 import Follow from './components/Follow/Follow';
 import Shop from './components/Shop/Shop';
 import Header from './components/Header/Header';
-
+import AddProduct from './components/AddProduct/AddProduct';
+import Account from './components/Account/Account';
 
 
 
@@ -60,6 +61,8 @@ class App extends Component {
         <Route component = { Product } path = '/product/:id'/>
         <Route component = { Follow } path = '/follow'/>
         <Route component = { Shop } path = '/Shop'/> 
+        <Route component = { AddProduct } path = '/addproduct'/>
+        <Route component = { Account } path = '/account'/>
         
       
       

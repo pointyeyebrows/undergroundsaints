@@ -4,6 +4,10 @@ module.exports = {
         console.log(db)
         db.get_items().then(response => res.status(200).send(response))
     },
+    get_productsOrdered: (req, res) => {
+        const db = req.app.get("db")
+        db.get_productsOrdered().then(response => res.status(200).send(response))
+    },
     add_order: (req, res, next) => {
         const { fulfilled, total, paid } = req.body;
         const db = req
@@ -23,13 +27,20 @@ module.exports = {
             .then(response => res.status(200).send(response))
     },
     add_productsOrdered: (req, res, next) => {
-        const { user_id, product_id, order_id, quantity } = req.body;
+        console.log('body', req.body)
+        const { user_id, cart } = req.body;
+        const total = cart.reduce((a , b) => {
+            return a + b.price;
+        }, 0);
         const db = req
             .app
-            .get("db")
-        db
-            .add_productsOrdered( [user_id, product_id, order_id, quantity] )
-            .then(response => res.status(200).send(response))
+            .get("db");
+            db.add_order( [false, total , false]).then(response => {
+                const orderId = response[0].id;
+            for(var i = 0; i < cart.length; i++){
+                return db.add_productsOrdered( [user_id, cart[i].id, orderId, 1] ).then(response => res.status(200).send(response))
+            }
+            }).then(response => { console.log('add_order response', response)})
     },
     add_user: (req, res, next) => {
         const { first_name, last_name, username, email, admin } = req.body;
