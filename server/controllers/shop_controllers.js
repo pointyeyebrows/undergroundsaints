@@ -1,12 +1,12 @@
 module.exports = {
     getItems: (req, res) => {
         const db = req.app.get("db")
-        console.log(db)
+        // console.log(db)
         db.get_items().then(response => res.status(200).send(response))
     },
     get_productsOrdered: (req, res) => {
         const db = req.app.get("db")
-        db.get_productsOrdered().then(response => res.status(200).send(response))
+        db.joinAll([req.params.user_id]).then(response => res.status(200).send(response))
     },
     add_order: (req, res, next) => {
         const { fulfilled, total, paid } = req.body;
@@ -27,8 +27,9 @@ module.exports = {
             .then(response => res.status(200).send(response))
     },
     add_productsOrdered: (req, res, next) => {
-        console.log('body', req.body)
+        // console.log('body', req.body)
         const { user_id, cart } = req.body;
+        console.log(user_id , cart)
         const total = cart.reduce((a , b) => {
             return a + b.price;
         }, 0);

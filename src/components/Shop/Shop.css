@@ -18,9 +18,9 @@
     font-weight: bold;
 }
 .topsPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    
     justify-content: space-around;
 
 
@@ -35,9 +35,9 @@
     
 }
 .bottomsPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    
 
 }
 .shoesBox {
@@ -50,9 +50,9 @@
 
 }
 .shoesPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    
 }
 .outerwearBox {
     position: relative;
@@ -63,9 +63,10 @@
     font-weight: bold;
 }
 .outerwearPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    margin-top: 15px;
+    
 }
 .hatsBox {
     position: relative;
@@ -76,9 +77,9 @@
     font-weight: bold;
 }
 .hatsPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    
     margin-top: 15px;
     
 }
@@ -91,9 +92,9 @@
     font-weight: bold;
 }
 .accesoriesPhoto {
-    height: 400px;
+    height: 500px;
     width: 400px;
-    border: solid black 1px;
+    
     margin-top: 15px;
 }
 .centered {

@@ -15,14 +15,15 @@ const initialState = {
     paid: '',
     allItems: [],
     cart: [],
-    userId: 2
+    userId: 0,
+    orders: []
 
 }
 
 const GET_ALL_ITEMS = 'GET_ALL_ITEMS';
 const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART';
 const SET_USER = "SET_USER";
-
+const GET_ALL_ORDERS = "GET_ALL_ORDERS";
 
 export function getAllItems(items){
     return {
@@ -42,6 +43,12 @@ export function addProductToCart(val) {
           payload: val
       }
   }
+  export function getAllOrders(user_id) {
+      return {
+          type: GET_ALL_ORDERS,
+          payload: user_id
+      }
+  }
 
 export default function reducer(state=initialState, action){
     switch(action.type){
@@ -55,6 +62,9 @@ export default function reducer(state=initialState, action){
 
             case SET_USER:
             return Object.assign( {}, state, {userId: action.payload} )
+
+            case GET_ALL_ORDERS:
+            return Object.assign( {}, state, {orders: action.payload} )
          
         default:
             return state;

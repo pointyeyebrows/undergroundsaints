@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { getAllItems, addProductToCart } from './../../ducks/reducer';
 import Header from '../Header/Header';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 class Product extends Component {
     componentDidMount() {
@@ -17,7 +19,12 @@ class Product extends Component {
     addToCart(item) {
         console.log(item);
         this.props.addProductToCart(item);
+        swal({
+            title: "Added To Cart",
+            button: "Ok",
+          });
     }
+    
     render(){
            
         return(
@@ -29,10 +36,10 @@ class Product extends Component {
                             <div key = {i}>
                                 <div className = 'individual'>
                                     <img src = {item.img_url}/>
-                                    <div>{item.name}</div>
-                                    <div>{item.description}</div>
+                                    <div>Name: {item.name}</div>
+                                    <div>Details: {item.description}</div>
                                     <div> ${item.price}</div>
-                                    <div>{item.size}</div>
+                                    <div>Size: {item.size}</div>
                                     <div className = "addToCart" onClick = {() => this.addToCart(item)}>Add to Cart</div>
 
                                 </div>

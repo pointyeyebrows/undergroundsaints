@@ -5,4 +5,10 @@
 }
 .addToCart{
     border: solid black 1px;
+    width: 100px;
+    text-align: center;
+}
+.individual{
+    padding-top: 100px;
+    
 }

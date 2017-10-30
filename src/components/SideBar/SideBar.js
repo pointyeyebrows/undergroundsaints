@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './SideBar.css';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 
 export default class SideBar extends Component {
     constructor() {
@@ -8,6 +9,10 @@ export default class SideBar extends Component {
         // this.state = {
         //     toggle: false
         // }
+    }
+    popUP(){
+        swal("Logged Out");
+
     }
     render() {
         // const slideMenu = this.state.toggle ? "openBoxCover" : "boxCover"
@@ -21,7 +26,8 @@ export default class SideBar extends Component {
                     < Link to="/brands" className='site-nav_link'>Brands</Link>
                     < Link to="/follow" className='site-nav_link'>Follow</Link>
                     <a href='http://localhost:3005/auth' className='site-nav_link'>Log In</a>
-                    < Link to="/account" className='site-nav_link'>My Account</Link> 
+                    <a href='http://localhost:3005/auth/logout' className='site-nav_link'>Logout</a>
+                    < Link to="/account" className='site-nav_link'>My Orders</Link> 
                     
                 </div>
                 </div>
