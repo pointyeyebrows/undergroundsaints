@@ -7,7 +7,7 @@ const session = require('express-session')
 const cors = require('cors')
 const passport = require('passport')
 const Auth0Strategy = require('passport-auth0')
-const ctrl = require('./config.js')
+// const ctrl = require('./config.js')
 const auth_ctr = require('./controllers/auth_controllers.js')
 const shop_ctr = require('./controllers/shop_controllers.js')
 const stripe = require('stripe')(process.env.STRIPE_PRV_KEY)
@@ -134,4 +134,4 @@ app.post('/api/payment', function(req, res, next){
 
 
 const PORT = 3005;
-app.listen(PORT, () => console.log(`Listening on port ${PORT} `, ctrl.AUTH_DOMAIN));
+app.listen(PORT, () => console.log(`Listening on port ${PORT} `));
