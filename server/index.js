@@ -83,6 +83,8 @@ app.get('/auth/logout', (req, res) => {
 
 })
 
+
+
 passport.serializeUser((id, done) => {
 
   done(null, id)
